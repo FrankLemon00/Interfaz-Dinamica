@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "nombre": "Doom Eternal",
+    "descripcion": "Matar demonios bien locochon con armas poderosas",
+    "plataforma": "PC, PlayStation, Xbox, Nintendo Switch"
+  },
+  {
+    "id": 2,
+    "nombre": "Resident Evil 4 Remake",
+    "descripcion": "Un héroe con peinado perfecto salva a la hija del presidente",
+    "plataforma": "PlayStation, Xbox, PC"
+  },
+  {
+    "id": 3,
+    "nombre": "Devil May Cry 5",
+    "descripcion": "Un cazador de demonios con estilo enfrenta amenazas sobrenaturales",
+    "plataforma": "PlayStation, Xbox, PC"
+  },
+  {
+    "id": 4,
+    "nombre": "Pokémon Escarlata",
+    "descripcion": "Atrapa a todos y conviértete en el mejor entrenador",
+    "plataforma": "Nintendo Switch"
+  },
+  {
+    "id": 5,
+    "nombre": "The Last of Us Part I",
+    "descripcion": "Un viaje crudo por la supervivencia y la esperanza",
+    "plataforma": "PlayStation, PC"
+  },
+  {
+    "id": 6,
+    "nombre": "Sekiro: Shadows Die Twice",
+    "descripcion": "Un shinobi con un solo brazo que no se rinde jamás",
+    "plataforma": "PlayStation, Xbox, PC"
+  },
+  {
+    "id": 7,
+    "nombre": "Dark Souls III",
+    "descripcion": "Morir es parte de la aventura en este mundo oscuro",
+    "plataforma": "PlayStation, Xbox, PC"
+  },
+  {
+    "id": 8,
+    "nombre": "Bloodborne",
+    "descripcion": "Enfrenta horrores cósmicos con estilo gótico",
+    "plataforma": "PlayStation"
+  },
+  {
+    "id": 9,
+    "nombre": "Ghost of Tsushima",
+    "descripcion": "Un samurái lucha por liberar su isla natal",
+    "plataforma": "PlayStation, PC"
+  },
+  {
+    "id": 10,
+    "nombre": "Death Stranding Director's Cut",
+    "descripcion": "Camina, conecta y reconstruye un mundo roto",
+    "plataforma": "PlayStation, PC"
+  },
+  {
+    "id": 11,
+    "nombre": "Metal Gear Solid V",
+    "descripcion": "Un soldado sigiloso salva al mundo de complots militares",
+    "plataforma": "PlayStation, Xbox, PC"
+  },
+  {
+    "id": 12,
+    "nombre": "Hollow Knight",
+    "descripcion": "Explora un reino olvidado lleno de secretos y desafíos",
+    "plataforma": "PC, Nintendo Switch, PlayStation, Xbox"
+  },
+  {
+    "id": 13,
+    "nombre": "Persona 5 Royal",
+    "descripcion": "Un grupo de estudiantes roba corazones para cambiar el mundo",
+    "plataforma": "PlayStation, Xbox, PC, Nintendo Switch"
+  },
+  {
+    "id": 14,
+    "nombre": "Elden Ring",
+    "descripcion": "Un mundo abierto brutal y hermoso te espera",
+    "plataforma": "PlayStation, Xbox, PC"
+  },
+  {
+    "id": 15,
+    "nombre": "The Witcher 3: Wild Hunt",
+    "descripcion": "RPG de fantasía basado en los libros de Sapkowski",
+    "plataforma": "PC, PlayStation, Xbox, Nintendo Switch"
+  },
+  {
+    "id": 16,
+    "nombre": "Cyberpunk 2077",
+    "descripcion": "RPG futurista en la ciudad de Night City",
+    "plataforma": "PC, PlayStation, Xbox"
+  },
+  {
+    "id": 17,
+    "nombre": "God of War Ragnarök",
+    "descripcion": "Kratos y Atreus enfrentan el fin de los tiempos",
+    "plataforma": "PlayStation"
+  },
+  {
+    "id": 18,
+    "nombre": "Super Mario Odyssey",
+    "descripcion": "Aventura plataformera en 3D de Mario",
+    "plataforma": "Nintendo Switch"
+  },
+  {
+    "id": 19,
+    "nombre": "Halo Infinite",
+    "descripcion": "El Jefe Maestro regresa para salvar la galaxia",
+    "plataforma": "Xbox, PC"
+  },
+  {
+    "id": 20,
+    "nombre": "Final Fantasy VII Remake",
+    "descripcion": "Un grupo rebelde enfrenta a una megacorporación malvada",
+    "plataforma": "PlayStation, PC"
+  }
+]

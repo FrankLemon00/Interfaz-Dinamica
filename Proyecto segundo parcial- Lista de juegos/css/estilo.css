@@ -1,0 +1,478 @@
+:root {
+    
+    --azul-pastel: #a8d8ea;        
+    --azul-medio: #78c2e6;        
+    --azul-oscuro: #4a90a4;       
+    --amarillo-suave: #fff9c4;     
+    --amarillo-dorado: #ffd54f;    
+    --amarillo-hover: #ffca28;     
+    
+ 
+    --blanco: #ffffff;
+    --blanco-hueso: #fafafa;
+    --gris-claro: #f5f5f5;
+    --gris-medio: #e0e0e0;
+    --gris-oscuro: #424242;
+    
+    
+    --verde-exito: #81c784;     
+    --rojo-error: #e57373;         
+    --naranja-info: #ffb74d;       
+    
+    
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --sombra-media: 0 6px 12px rgba(0, 0, 0, 0.15);
+    --sombra-intensa: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+   
+    --radio-borde: 12px;
+    --radio-borde-pequeno: 8px;
+    --borde-fino: 2px solid;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--blanco-hueso) 0%, var(--azul-pastel) 100%);
+    color: var(--gris-oscuro);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    background: linear-gradient(135deg, var(--azul-medio) 0%, var(--azul-pastel) 100%);
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+    border-bottom: var(--borde-fino) var(--amarillo-dorado);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><circle cx="20" cy="20" r="8" fill="%23ffffff"/><circle cx="80" cy="40" r="6" fill="%23ffffff"/><circle cx="40" cy="80" r="10" fill="%23ffffff"/></svg>');
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-10px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--blanco);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--azul-oscuro);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--azul-medio), var(--amarillo-dorado));
+    border-radius: 2px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+body {
+    padding: 20px;
+    flex: 1;
+}
+
+/* FORMULARIO DE AGREGAR */
+.contenedorFormularioAgregar {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: var(--blanco);
+    padding: 2.5rem;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-media);
+    border: var(--borde-fino) var(--azul-pastel);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedorFormularioAgregar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    
+}
+
+.contenedorFormularioAgregar:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-intensa);
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: var(--blanco-hueso);
+    border: var(--borde-fino) var(--azul-pastel);
+    border-radius: var(--radio-borde-pequeno);
+    color: var(--azul-oscuro);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+    font-family: inherit;
+}
+
+input[type="text"]::placeholder {
+    color: var(--azul-medio);
+    opacity: 0.7;
+}
+
+input[type="text"]:focus {
+    border-color: var(--amarillo-dorado);
+    background: var(--blanco);
+    box-shadow: 0 0 0 3px rgba(255, 213, 79, 0.2);
+    outline: none;
+    transform: scale(1.02);
+}
+
+
+#boton_Agregar {
+    background: linear-gradient(135deg, var(--amarillo-dorado) 0%, var(--amarillo-hover) 100%);
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--azul-oscuro);
+    border-radius: var(--radio-borde-pequeno);
+    cursor: pointer;
+    box-shadow: var(--sombra-suave);
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+#boton_Agregar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+#boton_Agregar:hover::before {
+    left: 100%;
+}
+
+#boton_Agregar:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-media);
+    background: linear-gradient(135deg, var(--amarillo-hover) 0%, var(--amarillo-dorado) 100%);
+}
+
+#boton_Agregar:active {
+    transform: translateY(0);
+    box-shadow: var(--sombra-suave);
+}
+
+
+.contenedorElementosDeJuego {
+    margin: 3rem auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+
+.elementosListaJuegos {
+    background: var(--blanco);
+    border: var(--borde-fino) var(--azul-pastel);
+    border-radius: var(--radio-borde);
+    padding: 2rem;
+    box-shadow: var(--sombra-suave);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.elementosListaJuegos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--azul-medio), var(--amarillo-dorado));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.elementosListaJuegos:hover::before {
+    transform: scaleX(1);
+}
+
+.elementosListaJuegos:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-intensa);
+    border-color: var(--amarillo-dorado);
+}
+
+.elementosListaJuegos h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--azul-oscuro);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.elementosListaJuegos p {
+    flex-grow: 1;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    color: var(--gris-oscuro);
+    opacity: 0.8;
+}
+
+
+.contenedor-botones {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+
+.botonEditar, .botonEliminar {
+    border: none;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radio-borde-pequeno);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.botonEditar {
+    background: linear-gradient(135deg, var(--azul-medio) 0%, var(--azul-pastel) 100%);
+    color: var(--blanco);
+}
+
+.botonEditar:hover {
+    background: linear-gradient(135deg, var(--azul-pastel) 0%, var(--azul-medio) 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-suave);
+}
+
+
+.botonEliminar {
+    background: linear-gradient(135deg, var(--rojo-error) 0%, #f44336 100%);
+    color: var(--blanco);
+}
+
+.botonEliminar:hover {
+    background: linear-gradient(135deg, #f44336 0%, var(--rojo-error) 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-suave);
+}
+
+
+#mensaje_error {
+    padding: 1rem 1.5rem;
+    border-radius: var(--radio-borde-pequeno);
+    margin: 1rem 0;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: var(--borde-fino);
+}
+
+#mensaje_error[hidden] {
+    display: none !important;
+}
+
+
+#mensaje_error:not([hidden]) {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--gris-oscuro) 100%);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+    border-top: var(--borde-fino) var(--amarillo-dorado);
+}
+
+footer p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* EFECTOS DE CARGA Y ANIMACIONES */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.elementosListaJuegos {
+    animation: fadeInUp 0.5s ease;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .contenedorFormularioAgregar {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .contenedorElementosDeJuego {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 2rem 1rem;
+    }
+    
+    .contenedor-botones {
+        flex-direction: column;
+    }
+    
+    .botonEditar, .botonEliminar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 1.5rem 0;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    input[type="text"] {
+        padding: 0.8rem 1rem;
+    }
+    
+    #boton_Agregar {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+
+button:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(120, 194, 230, 0.3);
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--blanco-hueso);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--azul-medio), var(--azul-pastel));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--amarillo-dorado), var(--amarillo-hover));
+}

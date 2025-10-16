@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Listly - CRUD Videojuegos</title>
+</head>
+<body>
+    <header>
+        <h1>Lista de videojuegos</h1>
+    </header>
+    
+    <h1>Lista de juegos por jugar</h1>
+    
+    <div class="contenedorFormularioAgregar">
+        <form id="formulario_Agregar">
+            <div id="mensaje_error" hidden></div>
+            <div>
+                <input type="text" placeholder="Título del juego" name="titulo" id="campo_titulo">
+            </div>
+            <div>
+                <input type="text" placeholder="Descripción" name="descripcion" id="campo_descripcion">
+            </div>
+            <div>
+                <input type="text" placeholder="Plataforma (ej: PC, PlayStation, Xbox)" name="plataforma" id="campo_plataforma">
+            </div>
+        </form>
+        <button id="boton_Agregar">Agregar Videojuego</button>
+    </div>
+    
+    <div class="contenedorElementosDeJuego" id="contenedor_Juegos">
+        <!-- Los videojuegos se cargarán aquí dinámicamente -->
+    </div>
+    
+    <footer>
+        <p>Pagina educativa sin fines de lucro</p>
+        <p>By: Francisco Andrew Leal Carrasco</p>
+    </footer>
+
+    <!-- Cargar scripts en orden y sin type="module" -->
+    <script src="js/gestor_videojuegos.js"></script>
+    <script src="js/controlador_vista.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
