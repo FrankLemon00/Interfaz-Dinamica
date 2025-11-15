@@ -1,0 +1,143 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif; /* Fuente suave y legible */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8fcfb; /* Blanco muy muy suave, casi menta */
+    padding: 20px;
+    color: #333; /* Color de texto estándar */
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra más definida */
+    border-radius: 12px;
+    background-color: #ffffff; /* Blanco puro para el contenedor */
+    padding: 25px;
+    width: 95%;
+    max-width: 1200px;
+    border: 1px solid #e0e0e0; /* Borde sutil */
+}
+
+/* ESTILO DEL HEADER */
+#app-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e0e0e0; 
+}
+
+#app-header h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #4CAF50; /* Un verde vibrante para el título */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05); /* Sombra de texto muy suave */
+}
+
+/* ESTILO DEL CANVAS */
+.canvas {
+    border: 1px solid #B2DFDB; /* Borde principal verde menta */
+    border-radius: 8px;
+    background-color: #ffffff; /* Fondo blanco */
+    margin-top: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07); /* Sombra suave */
+}
+
+/* ESTILO DEL MENÚ (Toolbar) */
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; 
+    padding: 18px;
+    background-color: #f5fcfb; /* Gris muy claro/casi blanco para el menú */
+    border-radius: 10px;
+    width: 100%; 
+    align-items: center;
+    justify-content: center; 
+    border: 1px solid #e0e0e0;
+}
+
+/* Separador visual para agrupar */
+.separator {
+    width: 1px;
+    height: 32px;
+    background-color: #cccccc;
+    margin: 0 10px;
+}
+
+/* ESTILO DE BOTONES */
+button, .custom-file-upload {
+    padding: 10px 16px;
+    border: 1px solid #B2DFDB; /* Borde verde menta */
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+    
+    background-color: #E0F2F1; /* Verde menta más claro */
+    color: #26A69A; /* Verde azulado oscuro para el texto */
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-size: 0.95em;
+}
+
+button:hover, .custom-file-upload:hover {
+    background-color: #A7D5D1; /* Verde menta ligeramente más oscuro */
+    border-color: #79B8B5;
+    transform: translateY(-2px); /* Pequeña elevación */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón ACTIVO (seleccionado) - Color Complementario Suave */
+button.activo {
+    background-color: #FFCBA4; /* Rosa Salmón Suave */
+    color: #E26D5A; /* Rojo-naranja oscuro para el texto */
+    border-color: #FFB790;
+    box-shadow: 0 2px 8px rgba(255, 203, 164, 0.4); /* Sombra con acento */
+    transform: translateY(-1px);
+}
+
+/* ESTILO ESPECÍFICO PARA EL BOTÓN DE LIMPIAR */
+#btnLimpiar {
+    background-color: #EF9A9A; /* Rojo Rosado Pastel */
+    color: #C62828; /* Rojo más oscuro para el texto */
+    border-color: #EF9A9A;
+}
+#btnLimpiar:hover {
+    background-color: #E57373; 
+    border-color: #E57373;
+}
+
+
+#menu label {
+    font-size: 1em;
+    color: #555; 
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+input[type="color"] {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid #B2DFDB; /* Borde verde menta */
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}

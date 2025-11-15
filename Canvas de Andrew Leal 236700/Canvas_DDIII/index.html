@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Mi Canvas Perron</title> 
+</head>
+<body>
+    <div id="app-container"> 
+        <header id="app-header">
+            <h1>Mi Canvas Perron</h1>
+        </header>
+        <div id="menu">
+            <label>Herramienta:</label>
+            <button id="btnCuadrado">Cuadrado</button>
+            <button id="btnCirculo">Círculo</button>
+            <button id="btnCorazon">Corazón</button>
+            <button id="btnLinea">Línea</button>
+            <button id="btnLapiz">Lápiz</button>
+            <button id="btnBorrador">Borrador</button>
+            <div class="separator"></div> 
+            <label for="fileInput" class="custom-file-upload">Cargar Imagen</label>
+            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            <div class="separator"></div> 
+            <label for="colorRellenoInput">Relleno:</label>
+            <input type="color" id="colorRellenoInput" value="#ffff00">
+            <label for="colorLineaInput">Contorno:</label>
+            <input type="color" id="colorLineaInput" value="#ff0000">
+            <div class="separator"></div> 
+            <button id="btnLimpiar">Limpiar Canvas</button>
+        </div>
+        
+        <canvas class="canvas" id="canvas" width="1000" height="600"></canvas>
+    </div>
+
+</body>
+<script src="js/figuras.js"></script> 
+<script src="js/canvas.js"></script>
+</html>
