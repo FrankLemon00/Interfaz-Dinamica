@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendita mamalona</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-store"></i> Tiendita mamalona</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="paginas/pokeDex.html"><i class="fa-solid fa-dragon"></i> PokeDex</a></li>
+                <li><a href="paginas/formularioDinamicos.html"><i class="fas fa-plus-circle"></i> Crear Producto</a></li>
+                <li><a href="#" id="cart-btn"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="#" id="login-btn"><i class="fas fa-user-circle"></i> Iniciar Sesión</a></li>
+                <li><a href="#" id="register-btn"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <button class="hamburger-btn" id="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Bienvenido, Entrenador</h1>
+                <div class="user-menu">
+                    <button class="btn btn-outline btn-sm">
+                        <i class="fas fa-user"></i> Mi Cuenta
+                    </button>
+                </div>
+            </div>
+            
+            <div class="card poke-card">
+                <div class="card-header">
+                    <h2 class="card-title">¡Elige tu Aventura en Poké Mart!</h2>
+                </div>
+                <div class="intro-content">
+                    <p>Poké Mart es tu tienda en línea para productos tecnológicos y coleccionables inspirados en el universo Pokémon. ¡Prepárate para la batalla!</p>
+                    <h3>Explora nuestras secciones:</h3>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fa-solid fa-dragon"></i>
+                            <h4>PokéDex</h4>
+                            <p>Descubre información detallada de tus Pokémon favoritos gracias a nuestra conexión con la PokeAPI.</p>
+                            <a href="paginas/pokeDex.html" class="btn poke-btn-primary">Explorar PokéDex</a>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-plus-circle"></i>
+                            <h4>Crear Productos</h4>
+                            <p>Crea y personaliza productos tecnológicos con nuestro generador de formularios dinámicos.</p>
+                            <a href="paginas/formularioDinamicos.html" class="btn poke-btn-primary">Personalizar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="cart-modal" class="modal-overlay">
+        <div class="modal-content poke-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-cart"></i> Tu Mochila de Compras</h2>
+                <button class="close-modal-btn" data-modal="cart-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Tu Carrito está vacío. ¡Es hora de empezar tu colección!</p>
+                </div>
+            <div class="modal-footer">
+                <button class="btn poke-btn-secondary" data-modal="cart-modal">Seguir Comprando</button>
+                <button class="btn poke-btn-primary">Proceder a Pagar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content poke-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-circle"></i> Centro Pokémon: Iniciar Sesión</h2>
+                <button class="close-modal-btn" data-modal="login-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form class="poke-form">
+                    <div class="form-group">
+                        <label for="login-email">Nombre de Entrenador (Email)</label>
+                        <input type="email" id="login-email" placeholder="pikachu@kanto.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" placeholder="Tu Contraseña Secreta" required>
+                    </div>
+                    <button type="submit" class="btn poke-btn-primary full-width-btn">Entrar</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p>¿Nuevo por aquí? <a href="#" id="switch-to-register">¡Regístrate!</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal-overlay">
+        <div class="modal-content poke-modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-plus"></i> ¡Sé un Entrenador! Registrarse</h2>
+                <button class="close-modal-btn" data-modal="register-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form class="poke-form">
+                    <div class="form-group">
+                        <label for="register-name">Nombre Completo</label>
+                        <input type="text" id="register-name" placeholder="Ash Ketchum" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" placeholder="ash@kanto.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Contraseña (Mín. 6 caracteres)</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirmar Contraseña</label>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn poke-btn-primary full-width-btn">¡Crear Cuenta!</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <p>¿Ya tienes una cuenta? <a href="#" id="switch-to-login">Inicia Sesión</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+@import url('../css/style.css');
+
+/* Forms - Estilo de campos de texto */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--poke-dark);
+}
+
+input[type="number"],
+input[type="text"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--poke-dark); /* Borde negro fuerte */
+    border-radius: 4px; /* Menos redondeado */
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--poke-red);
+    box-shadow: 0 0 0 3px var(--poke-yellow); /* Sombra de foco amarillo */
+}
+
+/* Image preview */
+.imgPrev {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    /* Estilo de la caja de imagen */
+    border: 3px dashed var(--poke-blue); 
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
+/* Toggle form button (Botón flotante con estilo Pokébola) */
+.toggle-form-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* Estilo Pokébola */
+    background: linear-gradient(to bottom, var(--poke-red) 50%, white 50%);
+    border: 5px solid var(--poke-dark);
+    /* Línea negra central */
+    background-clip: padding-box;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+    
+    color: var(--poke-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 100;
+    transition: var(--transition);
+}
+
+.toggle-form-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.toggle-form-btn i {
+    /* Círculo central (invisible, pero el ícono va dentro) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--poke-dark);
+    color: var(--poke-dark);
+    font-size: 1rem;
+}
+
+
+/* Estilos para los elementos dinámicos generados */
+
+.elementos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.product-card { /* Se usa la nueva clase 'product-card' */
+    background: var(--poke-light);
+    border: 3px solid var(--poke-dark);
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px var(--poke-dark);
+    transition: transform 0.1s ease;
+    padding: 0;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0px var(--poke-red);
+}
+
+.product-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px dashed var(--poke-gray);
+}
+
+.product-details {
+    padding: 1rem;
+}
+
+.product-name {
+    font-size: 1.3rem;
+    color: var(--poke-red);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.product-description {
+    color: var(--poke-gray);
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--poke-blue);
+    margin-bottom: 1rem;
+}
+
+/* Las reglas de media queries se eliminan porque se manejan en style.css ahora */

@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poké Mart - Creador de Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styleDin.css">
+</head>
+<body>
+    <div id="cart-modal" class="modal-overlay">... (Modal de Carrito) ...</div>
+    <div id="login-modal" class="modal-overlay">... (Modal de Iniciar Sesión) ...</div>
+    <div id="register-modal" class="modal-overlay">... (Modal de Registrarse) ...</div>
+    
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-store"></i> Poké Mart</div>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="pokeDex.html"><i class="fa-solid fa-dragon"></i> PokeDex</a></li>
+                <li><a href="formularioDinamicos.html" class="active"><i class="fas fa-plus-circle"></i> Crear Producto</a>
+                </li>
+                <li><a href="#" id="cart-btn"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="#" id="login-btn"><i class="fas fa-user-circle"></i> Iniciar Sesión</a></li>
+                <li><a href="#" id="register-btn"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <div class="page-header">
+                <button class="hamburger-btn" id="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Personaliza tu Artículo</h1>
+                <div class="user-menu">
+                    <button class="btn btn-outline btn-sm">
+                        <i class="fas fa-user"></i> Mi Cuenta
+                    </button>
+                </div>
+            </div>
+            
+            <div class="card poke-card">
+                <div class="card-header">
+                    <h2 class="card-title">Generador de Campos de Producto</h2>
+                </div>
+                <form id="formulario-dinamico" class="poke-form">
+                    <div class="form-group">
+                        <label for="cantidad">Ingrese la cantidad de elementos a crear</label>
+                        <input type="number" name="Cantidad" id="cantidad" min="1" max="20" onchange="CrearImagen(event)"
+                            placeholder="Ej: 5 campos extra">
+                    </div>
+                    <div id="elementos" class="elementos"></div>
+                </form>
+            </div>
+            
+            <div class="card poke-card" id="contenedor_formulario_producto_nuevo">
+                <div class="card-header">
+                    <h2 class="card-title">Agregar Nuevo Producto Base</h2>
+                    <button type="button" class="btn btn-sm poke-btn-secondary" onclick="ocultarformulario()">
+                        <i class="fas fa-times"></i> Cerrar
+                    </button>
+                </div>
+                <form id="formulario_producto_nuevo" class="poke-form">
+                    <div class="form-group">
+                        <img class="imgPrev" alt="Vista previa de imagen" id="imgFile"
+                            src="../recursos/image-placeholder.png">
+                        <label for="imagen_producto">Imagen del Producto</label>
+                        <input type="file" name="Imagen" id="imagen_producto" onchange="obtenerImagen(event)"
+                            accept="image/*">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre_producto">Nombre del Producto</label>
+                        <input type="text" name="Nombre" id="nombre_producto" required placeholder="Ej: Potion Max">
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripción</label>
+                        <textarea name="Descripcion" id="descripcion" required
+                            placeholder="Describe las características del producto..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio ($)</label>
+                        <input type="number" name="Precio" id="precio" required placeholder="Ej: 500.00">
+                    </div>
+                </form>
+                <button class="btn poke-btn-primary full-width-btn" onclick="AgregarProducto(event)">
+                    <i class="fas fa-plus-circle"></i> Agregar Producto
+                </button>
+            </div>
+            
+            <div class="toggle-form-btn">
+                <i class="fas fa-plus"></i>
+            </div>
+        </main>
+    </div>
+    <script src="../js/formulario.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/menu.js"></script>
+</body>
+</html>

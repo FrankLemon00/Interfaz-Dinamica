@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poké Mart - PokéDex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="../css/styleDex.css">
+</head>
+<body>
+    <div id="cart-modal" class="modal-overlay">... (Modal de Carrito) ...</div>
+    <div id="login-modal" class="modal-overlay">... (Modal de Iniciar Sesión) ...</div>
+    <div id="register-modal" class="modal-overlay">... (Modal de Registrarse) ...</div>
+    
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo"><i class="fas fa-store"></i> Poké Mart</div>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="pokeDex.html" class="active"><i class="fa-solid fa-dragon"></i> PokeDex</a></li>
+                <li><a href="formularioDinamicos.html"><i class="fas fa-plus-circle"></i> Crear Producto</a></li>
+                <li><a href="#" id="cart-btn"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="#" id="login-btn"><i class="fas fa-user-circle"></i> Iniciar Sesión</a></li>
+                <li><a href="#" id="register-btn"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <button class="hamburger-btn" id="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Pokédex Nacional</h1>
+                <div class="user-menu">
+                    <button class="btn btn-outline btn-sm">
+                        <i class="fas fa-user"></i> Mi Cuenta
+                    </button>
+                </div>
+            </div>
+
+            <div class="card poke-card">
+                <div class="card-header">
+                    <h2 class="card-title">Explora la Región de Kanto y más</h2>
+                </div>
+                <div id="pokemon-container" class="pokemon-grid">
+                    <div class="loading">Cargando Pokémon... ¡Espera un momento!</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/fletch.js"></script>
+    <script src="../js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+/* Reset y variables POKÉMON */
+:root {
+    /* Paleta Pokémon Clásica */
+    --poke-red: #D83C3C; /* Rojo de la Pokébola */
+    --poke-dark: #222222; /* Negro fuerte */
+    --poke-yellow: #FFCB05; /* Amarillo Pikachu / Énfasis */
+    --poke-blue: #3D79A6; /* Azul de acento (como si fuera agua/Game Boy) */
+    --poke-light: #F0F0F0; /* Blanco roto / Fondo de cards */
+    --poke-gray: #A0A0A0; /* Gris para textos secundarios */
+    
+    /* Variables reasignadas */
+    --primary: var(--poke-red);
+    --secondary: var(--poke-yellow);
+    --dark: var(--poke-dark);
+    --light: var(--poke-light);
+    --gray: var(--poke-gray);
+    --success: #78C850; /* Verde para éxito (Grass type) */
+    
+    /* Sombras y transiciones */
+    --card-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4); /* Sombra estilo retro */
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #F1F5F9; /* Fondo muy claro */
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* -------------------- LAYOUT Y SIDEBAR (ESTILO GAME BOY) -------------------- */
+.admin-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--dark); /* Fondo negro */
+    color: white;
+    padding: 1.5rem 1rem;
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    /* Borde grueso que simula la pantalla de una consola */
+    border-right: 5px solid var(--poke-blue); 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px dashed var(--poke-red); /* Separador rojo */
+}
+
+.sidebar-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0 var(--poke-red);
+}
+
+.sidebar-logo i {
+    color: var(--secondary); /* Icono amarillo */
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--light);
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background: var(--poke-red); /* Rojo al pasar el ratón */
+    color: white;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transform: translateX(5px);
+}
+
+.sidebar-menu i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Main Content */
+.main-content {
+    grid-column: 2;
+    padding: 2rem;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--poke-yellow); /* Barra amarilla de separación */
+}
+
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--poke-red); /* Título en rojo */
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------- TARJETAS Y CONTENIDO -------------------- */
+
+/* Cards - Estilo Cajas Pokémon */
+.card {
+    background: var(--poke-light);
+    border: 3px solid var(--dark); 
+    border-radius: 12px;
+    box-shadow: var(--card-shadow); 
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px dashed var(--poke-gray);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+/* Intro content */
+.intro-content h3 {
+    color: var(--poke-red);
+}
+
+.feature-card {
+    background: white;
+    border: 2px solid var(--poke-blue);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 2px 2px 0 var(--poke-blue);
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--poke-blue);
+}
+
+.feature-card i {
+    color: var(--poke-red);
+}
+
+/* -------------------- BOTONES POKÉMON -------------------- */
+
+.btn {
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3); /* Sombra en 3D */
+}
+
+.btn:active {
+    box-shadow: none;
+    transform: translate(2px, 2px); /* Efecto de click */
+}
+
+.btn-primary, .poke-btn-primary {
+    background: var(--poke-red);
+    color: white;
+    border: 2px solid var(--dark);
+}
+
+.btn-primary:hover, .poke-btn-primary:hover {
+    background: #FF5555;
+    color: white;
+}
+
+.btn-secondary, .poke-btn-secondary {
+    background: var(--poke-yellow);
+    color: var(--dark);
+    border: 2px solid var(--dark);
+}
+
+.btn-secondary:hover, .poke-btn-secondary:hover {
+    background: #FFE066;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--poke-red);
+    color: var(--poke-red);
+    box-shadow: 2px 2px 0 var(--poke-dark);
+}
+
+.btn-outline:hover {
+    background: var(--poke-red);
+    color: white;
+}
+
+.full-width-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* -------------------- MODALES (VISTAS EMERGENTES) -------------------- */
+
+/* Overlay que cubre toda la pantalla */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex; /* Mostrar cuando JS le añade la clase 'active' */
+}
+
+.modal-content {
+    background: var(--light);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-out;
+    border: 4px solid var(--poke-red);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--poke-gray);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    color: var(--poke-dark);
+    font-size: 1.5rem;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--poke-red);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.close-modal-btn:hover {
+    transform: rotate(90deg);
+}
+
+.modal-body p {
+    margin-bottom: 1rem;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--poke-gray);
+    padding-top: 1rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.modal-footer a {
+    color: var(--poke-red);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* -------------------- FORMULARIOS EN MODALES -------------------- */
+.poke-form input[type="email"],
+.poke-form input[type="password"],
+.poke-form input[type="text"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--poke-dark);
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.poke-form input:focus {
+    outline: 3px solid var(--poke-yellow);
+    box-shadow: none;
+}
+
+/* -------------------- RESPONSIVE Y MOBILE -------------------- */
+
+.overlay-mobile { /* Overlay usado solo para el sidebar en móvil */
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.overlay-mobile.active {
+    display: block;
+}
+
+@media (max-width: 720px) {
+    .hamburger-btn {
+        display: block;
+        color: var(--poke-red);
+    }
+    .admin-container {
+        grid-template-columns: 1fr;
+    }
+    .main-content {
+        grid-column: 1;
+        padding: 1rem;
+    }
+    .page-header {
+        margin-bottom: 1rem;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 480px) {
+    .sidebar {
+        width: 80%;
+    }
+    .modal-content {
+        padding: 1rem;
+    }
+}
