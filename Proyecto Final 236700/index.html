@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Juego - Dino Runner</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Usamos CDN para evitar errores de CORS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <!-- 1. LOGIN -->
+        <div id="login-view" class="view-content">
+            <h2>Acceso Requerido</h2>
+            <form id="login-form">
+                <label for="login-email"><i class="fas fa-envelope"></i> Correo:</label>
+                <input type="email" id="login-email" required placeholder="correo@ejemplo.com">
+                <label for="login-password"><i class="fas fa-lock"></i> Contraseña:</label>
+                <input type="password" id="login-password" required placeholder="********">
+                <button type="submit" class="tool-button"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+            </form>
+            <p id="login-message" class="error-message"></p>
+            <p class="switch-link">¿No tienes cuenta? <a href="#" id="show-register">Regístrate</a></p>
+        </div>
+
+        <!-- 2. REGISTRO -->
+        <div id="register-view" class="view-content hidden">
+            <h2>Registro</h2>
+            <form id="register-form">
+                <label for="reg-username"><i class="fas fa-user"></i> Usuario:</label>
+                <input type="text" id="reg-username" required placeholder="Tu nombre gamer">
+                <label for="reg-email"><i class="fas fa-envelope"></i> Correo:</label>
+                <input type="email" id="reg-email" required placeholder="correo@ejemplo.com">
+                <label for="reg-password"><i class="fas fa-key"></i> Contraseña:</label>
+                <input type="password" id="reg-password" required placeholder="Crea una contraseña">
+                <label for="reg-favorite-color"><i class="fas fa-palette"></i> Color Favorito:</label>
+                <input type="text" id="reg-favorite-color" required placeholder="Ej: Azul">
+                <button type="submit" class="tool-button"><i class="fas fa-user-plus"></i> Registrar y Entrar</button>
+            </form>
+            <p id="register-message" class="error-message"></p>
+            <p class="switch-link">¿Ya tienes cuenta? <a href="#" id="show-login">Iniciar Sesión</a></p>
+        </div>
+
+        <!-- 3. PERFIL -->
+        <div id="profile-view" class="profile-layout hidden">
+            <div class="profile-card">
+                <h3><i class="fas fa-id-card"></i> Perfil</h3>
+                <p><strong>Usuario:</strong> <span id="profile-username"></span></p>
+                <p><strong>Correo:</strong> <span id="prof-email"></span></p>
+                <p><strong>Color:</strong> <span id="prof-color"></span></p>
+                <p><strong>Récord:</strong> <span id="prof-best-score">0</span></p>
+                <p><strong>Partidas:</strong> <span id="prof-games-played">0</span></p>
+                <p><strong>Puntos Totales:</strong> <span id="prof-total-score">0</span></p>
+                <button id="btnStartGame" class="tool-button action-button full-width-btn"><i class="fas fa-gamepad"></i> ¡Jugar!</button>
+                <button id="btnLogout" class="tool-button full-width-btn small-btn" style="background-color: #555;"><i class="fas fa-sign-out-alt"></i> Salir</button>
+            </div>
+            <div class="history-card">
+                <h3><i class="fas fa-history"></i> Historial</h3>
+                <ul id="game-history-list"><li>Cargando...</li></ul>
+            </div>
+        </div>
+
+        <!-- JUEGO -->
+        <div id="game-view" class="game-screen hidden">
+            <div class="game-hud">
+                <span id="hud-username"></span>
+                <span id="hud-score">Score: 0</span>
+                <span id="hud-lives">Vidas: 1</span>
+            </div>
+            <canvas id="gameCanvas" width="1000" height="600"></canvas>
+            <div id="game-controls">
+                <button id="btnShowStats" class="tool-button small-btn action-button"><i class="fas fa-chart-line"></i> Estadísticas</button>
+                <button id="btnBackToProfile" class="tool-button small-btn" style="background-color: #ff6b6b; color: white;"><i class="fas fa-times-circle"></i> Salir</button>
+            </div>
+            <div id="inGameStats" class="in-game-panel hidden">
+                <h4>Game Over</h4>
+                <p>Jugador: <span id="inGameStatsUsername"></span></p>
+                <p>Puntos: <strong id="inGameStatsScore">0</strong></p>
+                <p>Récord: <strong id="inGameStatsRecord">0</strong></p>
+                <button id="inGameStatsRetry" class="tool-button action-button full-width-btn"><i class="fas fa-redo"></i> Jugar de Nuevo</button>
+                <button id="inGameStatsClose" class="tool-button small-btn full-width-btn" style="margin-top: 10px; background: transparent; border: 1px solid #555;">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+   
+
+</body>
+    <script type="module" src="jss/java.js"></script>
+</html>
